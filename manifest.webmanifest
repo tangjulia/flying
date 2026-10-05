@@ -1,0 +1,25 @@
+{
+  "name": "JULIA TANG · WEBHEAD",
+  "short_name": "JULIA TANG",
+  "description": "Julia Tang 的校园主页、日程与生活记录",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1eee5",
+  "theme_color": "#ed3a32",
+  "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

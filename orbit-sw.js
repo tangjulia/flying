@@ -1,0 +1,5 @@
+const CACHE = 'julia-orbit-shell-v1';
+const CORE = ['./orbit-atlas.html','./orbit-atlas.webmanifest','./orbit-icon-192.png','./orbit-icon-512.png'];
+self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE))); self.skipWaiting(); });
+self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('julia-orbit-shell-') && key !== CACHE).map(key => caches.delete(key))))); self.clients.claim(); });
+self.addEventListener('fetch', event => { const req=event.request; const url=new URL(req.url); if(req.method!=='GET'||url.origin!==self.location.origin)return; event.respondWith((async()=>{const cached=await caches.match(req); if(cached)return cached; try {const res=await fetch(req); if(res.ok&&req.mode==='navigate'){const cache=await caches.open(CACHE); await cache.put(req,res.clone());} return res;} catch {if(req.mode==='navigate')return (await caches.match('./orbit-atlas.html'))||Response.error(); return Response.error();}})()); });

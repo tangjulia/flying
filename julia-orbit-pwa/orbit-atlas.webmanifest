@@ -1,0 +1,15 @@
+{
+  "name": "Julia Tang · 远航档案",
+  "short_name": "远航档案",
+  "description": "从华中师范大学出发，以物理为主线，通往北大与 MIT 的个人行动地图。",
+  "start_url": "./orbit-atlas.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101b15",
+  "theme_color": "#101b15",
+  "icons": [
+    { "src": "./orbit-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./orbit-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
